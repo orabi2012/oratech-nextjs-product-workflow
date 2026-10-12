@@ -27,7 +27,7 @@ When asked to start the project, make the first development step a [working base
 
 For a substantial feature, use [the step workflow](references/step-loop.md): agree on observable behavior, record a brief spec when useful, implement in small increments, review the diff, run relevant checks, update affected docs, and report evidence. Use [the step spec template](assets/step-spec-template.md) if the repository has no preferred format. For a small fix, keep the process proportionate.
 
-Implement directly unless the user or repository instructions request delegation. If delegating, use an available delegation tool and [the implementation brief template](assets/codex-brief-template.md), then independently review the result. A template does not authorize external actions, commits, pushes, or deployment.
+Implement directly unless the user or repository instructions request delegation. For delegated implementation, use the matching installed `*-delegate` skill from [delegate-skills](https://github.com/amElnagdy/delegate-skills) and adapt [the implementation brief template](assets/codex-brief-template.md) to that implementer. Follow the delegation skill's dispatch procedure, then independently review the diff and run the relevant checks. If the matching skill or implementer CLI is unavailable, report the missing dependency before delegating. A template does not authorize external actions, commits, pushes, or deployment.
 
 ## Engineering choices
 

@@ -19,7 +19,7 @@ For genuine policy trade-offs, give two or three options, consequences, and a re
 
 - Work in small, coherent increments. Write focused tests first when they clarify a rule or protect a regression; test business rules at the narrowest useful level.
 - Reuse existing helpers and contracts. Keep migrations additive; do not rewrite applied migrations.
-- If the user or repository calls for delegated implementation, capture the current working tree state, provide the spec and relevant files in [a brief](../assets/codex-brief-template.md), and keep the delegated change distinguishable from pre-existing work. Delegation is optional.
+- If the user or repository calls for delegated implementation, use the matching installed `*-delegate` skill from [delegate-skills](https://github.com/amElnagdy/delegate-skills). Capture the current working tree state, provide the spec and relevant files in [a brief](../assets/codex-brief-template.md), and keep the delegated change distinguishable from pre-existing work.
 - Coordinate servers, ports, and browser runs with other active work. Stop processes started for the task.
 
 ## 4. Review and verify

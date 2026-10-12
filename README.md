@@ -18,6 +18,16 @@ npx skills add orabi2012/oratech-nextjs-product-workflow
 
 The repository contains one skill at its root; the installer should copy `SKILL.md` together with `references/` and `assets/`. If the repository is private, the developer needs GitHub access configured for Git, GitHub CLI, or SSH.
 
+### Install the delegation dependency
+
+Delegated implementation uses [delegate-skills](https://github.com/amElnagdy/delegate-skills). Install the `*-delegate` skill for the implementer your team uses. For example, to delegate implementation to Codex:
+
+```bash
+npx skills add amElnagdy/delegate-skills --skill codex-delegate -g
+```
+
+Select the same orchestrating host and scope used for this workflow skill. Omit `-g` from both install commands for a project-only setup. The `codex-delegate` path also requires an installed, authenticated Codex CLI, Node.js 18+, and Git. For another implementer, choose its matching skill from the delegate-skills repository. Install `delegate-setup` only if the team wants its fleet configuration.
+
 ### Use and update
 
 | Host | Invoke with |
@@ -25,7 +35,7 @@ The repository contains one skill at its root; the installer should copy `SKILL.
 | Claude Code | `/oratech-nextjs-product-workflow` |
 | Codex | `$oratech-nextjs-product-workflow` |
 
-To update an installation managed by the Skills CLI, run `npx skills update oratech-nextjs-product-workflow`. If a new installation does not appear, restart the host application.
+To update an installation managed by the Skills CLI, run `npx skills update oratech-nextjs-product-workflow`. Update the chosen delegation skill separately when needed. If a new installation does not appear, restart the host application.
 
 ### Manual installation
 
