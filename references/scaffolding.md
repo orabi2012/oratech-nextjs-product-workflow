@@ -10,7 +10,7 @@ Use this when the user asks to start a new project from its technical plan. The 
 
 ## Create the planned foundation
 
-Use the repository's existing tools or suitable installed generators, then adapt their output. A planned npm-workspaces monorepo with separate web and API apps might start with:
+Use the repository's existing tools or suitable installed generators, then adapt their output. Illustrative only (use it when the plan chooses an npm-workspaces monorepo with separate web and API apps; otherwise follow the plan):
 
 ```text
 apps/web/                Next.js App Router, locale-aware starter page

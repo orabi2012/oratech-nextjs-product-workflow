@@ -11,12 +11,12 @@ Apply the sections relevant to the change and the repository's established conve
 
 ## Security and privacy
 
-- Authorize by default on protected APIs. Test access for unauthenticated users and each relevant role.
-- Hash passwords with a suitable slow password hash. Separate self-service credential changes from administrator resets; avoid account enumeration in recovery flows.
-- Keep secrets out of source, responses, and logs. Encrypt stored third-party credentials with a managed per-deployment key when storage is necessary; expose only set or masked status in read APIs.
-- Validate inputs at boundaries and enforce durable invariants with database constraints. Use parameterized database access, explicit allowed origins, and appropriate rate limits.
-- Validate upload size, type, and internal format before processing. Review server-side requests to user-supplied hosts for private-network access.
-- Adopt a Content Security Policy compatible with the app; test it before enforcement when adding a new policy.
+The checkable list lives in [the security checklist](security-checklist.md); walk it for auth, input, secrets, uploads, headers, Prisma migrations, and dependencies. Principles:
+
+- Authorize by default; check object-level access, not only login state.
+- Keep secrets out of source, responses, and logs.
+- Validate at every boundary and enforce invariants in the database too.
+- Fail closed, and never leak internals in errors.
 
 ## Data and performance
 

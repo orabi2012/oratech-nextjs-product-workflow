@@ -8,7 +8,8 @@ Use this for a new product or major rebuild. The plan is the source for developm
 2. Ask the developer a small batch of high-impact questions, preferably three or fewer. Start in product language, then ask technical questions only where the answer changes the plan. Give concise options and a recommendation when useful.
 3. Record each answer as a requirement, constraint, or decision. Record unanswered items as open questions with the step they block. State assumptions explicitly and keep them easy to revise.
 4. Draft or update the plan, show the developer the consequential assumptions and trade-offs, and incorporate corrections. Continue useful planning while waiting for answers; do not implement a step that depends on an unresolved decision.
-5. Derive development steps from the plan and verify that every first-release outcome and required security control has a step and acceptance evidence. Revisit the plan when a decision or implementation changes.
+5. **Exit the interview** when no open question blocks the first step. Set the plan status to `agreed` only after the developer explicitly approves it; do not scaffold or implement before that.
+6. Derive development steps from the plan and verify that every first-release outcome and required security control has a step and acceptance evidence. Revisit the plan when a decision or implementation changes.
 
 ## Start with these questions when the answer is missing
 

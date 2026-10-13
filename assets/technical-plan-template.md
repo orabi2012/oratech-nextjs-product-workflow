@@ -34,7 +34,7 @@ Main interfaces, inputs, outputs, errors, and versioning.
 Data sensitivity and threat assumptions; authentication and role enforcement; session and CSRF approach if applicable; input validation; secret storage; CORS/CSP and network boundaries; rate limits; safe logging and audit; retention, backups, and recovery. For each required control, state where it is enforced, how it will be verified, and the step that implements it. Omit controls that do not apply and explain consequential omissions.
 
 ## Operations and verification
-Environments, deployment ownership, configuration, backup and recovery, observability, test strategy, and relevant quality gates.
+Environments, deployment ownership, configuration, backup and recovery, rollback approach for releases and migrations, observability, test strategy, and the quality-gate commands (lint, typecheck, test, build, migrate).
 
 ## Decisions and risks
 Confirmed decisions with reasons; assumptions to verify; open questions with their owner and the development step they block; material risks and mitigations.
@@ -43,7 +43,7 @@ Confirmed decisions with reasons; assumptions to verify; open questions with the
 For each first-release outcome or security control, record a short ID, the development step that delivers it, and the acceptance evidence. Keep this compact; link to step specs for details.
 
 ## Development steps
-For each step: ID and outcome; dependencies; included behavior and excluded work; affected data/API/UI; acceptance evidence; status. If starting from an empty repository, begin with a verified base scaffold, then add a usable end-to-end slice early.
+For each step (IDs like S1, S2, in dependency order): outcome; dependencies; included behavior and excluded work; affected data/API/UI; acceptance evidence; status. If starting from an empty repository, begin with a verified base scaffold, then add a usable end-to-end slice early.
 
 ## Current state
 One short paragraph: last verified step, relevant commands or migration, next step, and blocking decisions. Update it after each step so a new session can orient without rereading the whole plan.

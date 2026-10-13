@@ -13,7 +13,7 @@ Use these as decision prompts. Match the existing repository before introducing 
 - Start protected routes from a deny-by-default posture. Make public access explicit and test role boundaries.
 - Define the role hierarchy and authorization source for this product. Do not assume a fixed set of roles or trust an identity-provider claim as an application role without a deliberate mapping.
 - For cookie sessions, use secure, HttpOnly cookies and CSRF protection on writes. Revoke affected sessions when credentials or privileges change, according to the product's policy.
-- Rate-limit abuse-prone public routes. Configure proxy trust to reflect the actual network path so client identity cannot be forged.
+- Rate-limit abuse-prone public routes ([security checklist](security-checklist.md)); proxy trust is covered in [deployment](deployment.md).
 
 ## Data and workflows
 
