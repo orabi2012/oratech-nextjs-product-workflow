@@ -1,51 +1,52 @@
 ---
 name: oratech-nextjs-product-workflow
-description: Discover requirements, write a technical plan, scaffold a project, derive development steps, and build or review Next.js and NestJS applications using Prisma and PostgreSQL, including bilingual RTL/LTR interfaces. Use for new projects, planning, setup, feature steps, architecture, web UI, testing, and deployment on this stack.
+description: Use when planning, scaffolding, building a step of, or reviewing a product on Next.js + NestJS + Prisma/PostgreSQL, especially bilingual RTL/LTR (Arabic/English). Triggers include "plan a product", "technical plan", "scaffold the project", "implement the next step", "review this feature/PR", "add Arabic/RTL support". Not for isolated Next.js/React questions or other stacks (Express, Angular, Drizzle, TypeORM, non-web).
 ---
 
 # Next.js product workflow
 
-Use this skill to make a change understandable, testable, and ready for the project's own release process. First discover the repository's conventions and the user's preferences. The patterns in these files are starting points, not requirements to retrofit into an existing app.
+Make a change understandable, testable, and ready for the project's own release process. Discover the repository's conventions first; the patterns here are starting points, not requirements to retrofit into an existing app.
 
 ## Start with the project
 
-1. Read the repository instructions, current docs, package scripts, relevant code, and working tree. Compare plans with implemented behavior.
-2. Identify the task's scope and any real product or policy decisions. Present options and a recommendation when the choice belongs to the user; keep working on independent parts while waiting.
-3. Follow the existing architecture, locales, test setup, deployment flow, and contribution rules unless the user asks to change them. Do not infer a client-specific product, monorepo, or particular branch names from this skill.
+1. Read repository instructions, current docs, package scripts, relevant code, and the working tree. Compare plans with implemented behavior.
+2. Identify the scope and any real product or policy decisions. Offer options with a recommendation when the choice is the user's.
+3. Follow the existing architecture, locales, tests, deployment flow, and contribution rules. Do not infer a client-specific product, monorepo, or branch names from this skill.
 
-## Plan before building a new project
+## Route by task
 
-For a new project or major rebuild, use [the technical planning interview](references/technical-planning.md). Inspect any existing brief or plan first, then ask the developer only for missing, consequential decisions. Ask a small group of clear questions at a time; offer options and a recommendation when the developer is choosing among approaches. Do not fill product-policy gaps with invented requirements.
+| Task | Do this |
+| --- | --- |
+| New project or major rebuild | Run [technical planning](references/technical-planning.md); write the plan from [the template](assets/technical-plan-template.md) |
+| "Start the project" | Only after the plan is approved: [base scaffold](references/scaffolding.md) |
+| Feature or fix | [Step workflow](references/step-loop.md); spec from [the template](assets/step-spec-template.md) when the rules there require one |
+| Review a feature, diff, or PR | [Review workflow](references/review.md) |
+| Delegated implementation (optional) | [Delegation](#delegation-optional) |
 
-Write the technical plan in the repository's preferred location, or use [the technical plan template](assets/technical-plan-template.md) at `docs/technical-plan.md`. Mark facts, assumptions, and open decisions distinctly. Record the security controls and direct packages the product needs, with reasons and versions. Derive an ordered list of small, verifiable development steps from the plan. Keep each step linked to a goal, dependency, and acceptance evidence. Reconcile the plan with the code as implementation progresses.
+**Approval gate:** do not scaffold or implement until the user has approved the plan (status `agreed`) or the step spec. Keep working only on independent planning questions while waiting.
 
-## Scaffold from the plan
+## Read when
 
-When asked to start the project, make the first development step a [working base scaffold](references/scaffolding.md), unless the repository already has one. Create the directories, configuration, starter code, and baseline checks in the workspace; do not stop at a proposed tree. Use the plan to choose the app layout and initial bilingual setup. Preserve existing files and report anything that could not be generated or verified.
+- [Architecture](references/architecture.md): designing modules, shared rules, auth, data, workflows, integrations.
+- [Engineering standards](references/engineering-standards.md): code structure, data, API, and error behavior.
+- [Security checklist](references/security-checklist.md): implementing or reviewing anything that touches auth, input, secrets, uploads, headers, dependencies, or Prisma migrations.
+- [Web UI](references/web-ui.md): Next.js screens, URL state, accessibility, bilingual RTL/LTR, browser checks.
+- [Deployment](references/deployment.md): CI, containers, environment configuration, release work only.
+- [Official documentation](references/official-documentation.md): scaffolding, dependency changes, or version-sensitive Next.js, NestJS, Prisma, Docker, PostgreSQL behavior.
 
-## Feature loop
+Apply a pattern only when its premise matches the project. Preserve established contracts; add no infrastructure for a hypothetical future use.
 
-For a substantial feature, use [the step workflow](references/step-loop.md): agree on observable behavior, record a brief spec when useful, implement in small increments, review the diff, run relevant checks, update affected docs, and report evidence. Use [the step spec template](assets/step-spec-template.md) if the repository has no preferred format. For a small fix, keep the process proportionate.
+## Delegation (optional)
 
-Implement directly unless the user or repository instructions request delegation. For delegated implementation, use the matching installed `*-delegate` skill from [delegate-skills](https://github.com/amElnagdy/delegate-skills) and adapt [the implementation brief template](assets/codex-brief-template.md) to that implementer. Follow the delegation skill's dispatch procedure, then independently review the diff and run the relevant checks. If the matching skill or implementer CLI is unavailable, report the missing dependency before delegating. A template does not authorize external actions, commits, pushes, or deployment.
-
-## Engineering choices
-
-- Read [architecture](references/architecture.md) when designing modules, shared rules, authentication, data, workflows, or integrations.
-- Read [engineering standards](references/engineering-standards.md) when implementing or reviewing API, database, security, performance, and error behavior.
-- Read [web UI](references/web-ui.md) for Next.js screens, URL state, accessibility, bilingual RTL/LTR behavior, and browser checks.
-- Read [deployment](references/deployment.md) only for CI, containers, environment configuration, or release work.
-- Use [official documentation checks](references/official-documentation.md) when scaffolding, changing dependencies, or using version-sensitive Next.js, NestJS, Prisma, Docker, or PostgreSQL behavior.
-
-Apply a pattern only when its premise matches the project. Preserve established contracts and avoid adding infrastructure for a hypothetical future use.
+Implement directly unless the user or repository instructions ask for delegation. If delegating, use the matching installed `*-delegate` skill from [delegate-skills](https://github.com/amElnagdy/delegate-skills) and adapt [the implementer brief](assets/implementer-brief-template.md). If that skill or CLI is unavailable, say so and offer to implement directly. Always review the diff and run the checks yourself ([review step](references/step-loop.md#4-review-and-verify)). A template never authorizes external actions, commits, pushes, or deployment.
 
 ## Use context efficiently
 
-- Load only the reference for the current task. In an existing repository, locate the relevant plan section, nearby code, and tests instead of rereading every file.
-- Keep one source of truth: the technical plan holds cross-step decisions; a step spec links to it; an implementation brief links to the spec. Do not repeat whole documents in each layer.
-- Ask only questions that change the next decision. Once a plan is actionable, record later questions and proceed with independent steps.
-- Start verification with the changed behavior, then run broader checks required by the repository or risk. Stop optional checks when the result is sufficiently supported.
+- Load only the reference for the current task; in an existing repo, find the relevant plan section, code, and tests rather than rereading everything.
+- One source of truth per layer: plan holds cross-step decisions, a spec links to it, a brief links to the spec.
+- Ask only questions that change the next decision; record the rest and proceed with independent work.
+- Verify the changed behavior first, then the broader checks the repository or risk requires.
 
 ## Completion
 
-Run the checks that exist and matter for the change. State what passed, failed, or could not run; never call a change verified on the implementer's report alone. Summarize changed behavior, notable decisions, and any required follow-up. Follow the user's or repository's commit and release policy.
+Run the checks that exist and matter. State what passed, failed, or could not run; never call a change verified on an implementer's report alone. Summarize changed behavior, decisions, and follow-up. Follow the user's or repository's commit and release policy.
