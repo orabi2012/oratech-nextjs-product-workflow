@@ -31,7 +31,7 @@ Make a change understandable, testable, and ready for the project's own release 
 - [Engineering standards](references/engineering-standards.md): code structure, data, API, and error behavior.
 - [Security checklist](references/security-checklist.md): implementing or reviewing anything that touches auth, input, secrets, uploads, headers, dependencies, or Prisma migrations.
 - [Web UI](references/web-ui.md): Next.js screens, URL state, accessibility, bilingual RTL/LTR, browser checks.
-- [Deployment](references/deployment.md): CI, containers, environment configuration, release work only.
+- [Deployment](references/deployment.md): CI, containers, environment configuration, release and client-handover work only.
 - [Official documentation](references/official-documentation.md): scaffolding, dependency changes, or version-sensitive Next.js, NestJS, Prisma, Docker, PostgreSQL behavior.
 
 Apply a pattern only when its premise matches the project. Preserve established contracts; add no infrastructure for a hypothetical future use.

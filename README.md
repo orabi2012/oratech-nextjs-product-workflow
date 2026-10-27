@@ -88,7 +88,7 @@ For a new project, the suggested plan location is `docs/technical-plan.md` in th
 | [references/step-loop.md](references/step-loop.md) | Feature stages, spec rules, and verification ladder |
 | [references/review.md](references/review.md) | Review workflow and report format |
 | [references/security-checklist.md](references/security-checklist.md) | Checkable security items |
-| [references/deployment.md](references/deployment.md) | Container, environment, and release decisions |
+| [references/deployment.md](references/deployment.md) | Container, environment, release and client-handover decisions |
 | [references/official-documentation.md](references/official-documentation.md) | Official documentation to check for version-sensitive choices |
 | [assets/technical-plan-template.md](assets/technical-plan-template.md) | Technical plan template |
 | [assets/step-spec-template.md](assets/step-spec-template.md) | Development-step specification template |
