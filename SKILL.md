@@ -1,6 +1,8 @@
 ---
 name: oratech-nextjs-product-workflow
-description: Use when planning, scaffolding, building a step of, or reviewing a product on Next.js + NestJS + Prisma/PostgreSQL, especially bilingual RTL/LTR (Arabic/English). Triggers include "plan a product", "technical plan", "scaffold the project", "implement the next step", "review this feature/PR", "add Arabic/RTL support". Not for isolated Next.js/React questions or other stacks (Express, Angular, Drizzle, TypeORM, non-web).
+description: Use when planning, scaffolding, building a step of, or reviewing a product on Next.js + NestJS + Prisma/PostgreSQL, especially bilingual RTL/LTR (Arabic/English). Triggers include "plan a product", "technical plan", "scaffold the project", "implement the next step", "review this feature/PR", "add Arabic/RTL support", "deploy to a server", "cut a release", "hand over to a client". Not for isolated Next.js/React questions or other stacks (Express, Angular, Drizzle, TypeORM, non-web).
+metadata:
+  version: "1.1.0"
 ---
 
 # Next.js product workflow
@@ -21,6 +23,7 @@ Make a change understandable, testable, and ready for the project's own release 
 | "Start the project" | Only after the plan is approved: [base scaffold](references/scaffolding.md) |
 | Feature or fix | [Step workflow](references/step-loop.md); spec from [the template](assets/step-spec-template.md) when the rules there require one |
 | Review a feature, diff, or PR | [Review workflow](references/review.md) |
+| Deploy, cut a release, or hand over to a client | [Deployment](references/deployment.md) (developer server, client package, rehearsal, workflow shape) |
 | Delegated implementation (optional) | [Delegation](#delegation-optional) |
 
 **Approval gate:** do not scaffold or implement until the user has approved the plan (status `agreed`) or the step spec. Keep working only on independent planning questions while waiting.
